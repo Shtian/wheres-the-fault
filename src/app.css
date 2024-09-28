@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: geistSansFont;
+  font-weight: 400;
+  src: url(/Geist-Regular.woff2) format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: geistSansFont;
+  font-weight: 700;
+  src: url(/Geist-Bold.woff2) format("woff2");
+  font-display: swap;
+}
+
+:root {
+  --font-geist-mono: "geistMonoFont", ui-monospace, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, SFMono-Regular, Roboto Mono, Menlo, Monaco,
+    Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  --font-geist-sans: "geistSansFont", Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, arial;
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
