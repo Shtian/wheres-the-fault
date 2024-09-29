@@ -1,22 +1,18 @@
 <script lang="ts">
   import ShikiCode from "$lib/components/ShikiCode.svelte";
   import { ExternalLink } from "lucide-svelte";
-  const kqlCode = `
-Tablename 
+  const kqlCode = `Tablename 
 | where Condition
 | summarize Aggregation by Grouping 
 | order by Column [asc|desc] 
 | project Column1, Column2 
-| render ChartType
-  `;
+| render ChartType`;
 
-  const kqlCodeExample = `
-exceptions // plukker fra exceptions-tabellen
+  const kqlCodeExample = `exceptions // plukker fra exceptions-tabellen
 | where timestamp > ago(30d) and timestamp < ago (10d) // alt nyere enn 30 dager og eldre enn 10 dager
 | where problemId startswith "TypeError" // alt med problemId som starter på "TypeError"
 | summarize count() by bin(timestamp, 1d) // grupperer på dag
-| render timechart // tegner en graf
-  `;
+| render timechart // tegner en graf`;
 </script>
 
 <h2 id="app-insights-intro">Application Insights</h2>
