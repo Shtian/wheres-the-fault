@@ -72,7 +72,7 @@ const iceWebTeamNotificationsErrorFlow: Prompt[] = [
   {
     type: "Question",
     question:
-      "Er feilene fra tjenester vi er avhengig av? Navi/proffs/cds etc.",
+      "Er feilene fra tjenester vi er avhengig av? Navi/PROFFS/CDS etc.",
     choices: [
       { text: COMMON_PROMPT_TEXTS.YES, nextEntityId: "dependency-issues-info" },
       { text: COMMON_PROMPT_TEXTS.NO, nextEntityId: "is-it-a-known-issue" },
@@ -163,6 +163,11 @@ const iceWebTeamNotificationsErrorFlow: Prompt[] = [
       { text: COMMON_PROMPT_TEXTS.NO, nextEntityId: "find-hotjar-recording" },
     ],
     id: "can-you-reproduce",
+  },
+  {
+    type: "Information",
+    message: "Fantastisk! Lag en bug i Jira med detaljer for å reprodusere ✨",
+    id: "success-create-issue",
   },
   {
     type: "Question",

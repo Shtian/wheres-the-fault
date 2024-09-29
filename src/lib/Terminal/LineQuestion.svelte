@@ -36,6 +36,7 @@
   $effect(() => {
     selectedChoice = question.choices[selectedIndex].nextEntityId;
   });
+
   function handleKeyDown(e: KeyboardEvent) {
     if (!active) return;
     if (e.key === "Enter" || e.key === " ") {

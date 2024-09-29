@@ -6,6 +6,7 @@
   import LineQuestion from "./LineQuestion.svelte";
   import LineInformation from "./LineInfromation.svelte";
   import { confetti } from "../confetti";
+  import KeyboardShortcuts from "./KeyboardShortcuts.svelte";
 
   const prompts = createPrompts();
   let sectionElement: HTMLElement;
@@ -43,8 +44,9 @@
 <svelte:window on:keydown={handleKeyDown} />
 <section
   bind:this={sectionElement}
-  class="bg-zinc-900 h-50 md:h-[100svh] w-100 font-mono px-4 py-2 flex flex-col text-zinc-400 overflow-y-auto flex-1"
+  class="relative bg-zinc-900 h-50 md:h-[100svh] w-100 font-mono px-4 py-2 flex flex-col text-zinc-400 overflow-y-auto flex-1"
 >
+  <KeyboardShortcuts />
   <LineHeader>Welcome to Where's The Fault (WTF)!</LineHeader>
   <Line></Line>
   {#each prompts.prompts as prompt, i}
@@ -56,5 +58,5 @@
       <LineInformation>{prompt.message}</LineInformation>
     {/if}
   {/each}
-  <LineEnd />
+  <LineEnd active={prompts.prompts.at(-1)?.type === "Question"} />
 </section>
