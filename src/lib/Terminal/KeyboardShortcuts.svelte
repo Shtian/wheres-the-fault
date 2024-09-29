@@ -49,7 +49,15 @@
           </tr>
           <tr>
             <td>Start på nytt</td>
-            <td>ctrl + l</td>
+            <td>ctrl + L</td>
+          </tr>
+          <tr>
+            <td>???</td>
+            <td>C</td>
+          </tr>
+          <tr>
+            <td>Hmm 🤔</td>
+            <td>B</td>
           </tr>
         </tbody>
       </table>
