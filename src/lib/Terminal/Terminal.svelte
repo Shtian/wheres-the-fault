@@ -4,10 +4,11 @@
   import LineEnd from "./LineEnd.svelte";
   import LineHeader from "./LineHeader.svelte";
   import LineQuestion from "./LineQuestion.svelte";
-  import LineInformation from "./LineInfromation.svelte";
+  import LineInformation from "./LineInformation.svelte";
   import { confetti } from "../confetti";
   import KeyboardShortcuts from "./KeyboardShortcuts.svelte";
   import { Keyboard } from "lucide-svelte";
+
   const prompts = createPrompts();
   let sectionElement: HTMLElement;
   async function scrollToBottom(node: HTMLElement) {
@@ -16,7 +17,6 @@
 
   $effect(() => {
     prompts.prompts.length;
-    console.log("scroll");
     // scroll to bottom of section
     scrollToBottom(sectionElement);
   });
@@ -30,7 +30,7 @@
       prompts.clear();
     }
 
-    // p
+    // c
     if (e.key === "c" && !e.ctrlKey && !e.metaKey) {
       confetti();
     }
@@ -52,12 +52,23 @@
   <Line></Line>
   {#each prompts.prompts as prompt, i}
     {#if prompt.type === "Question"}
-      <LineQuestion active={i == prompts.prompts.length - 1} question={prompt}
+      <LineQuestion
+        active={i == prompts.prompts.length - 1}
+        question={prompt}
+        docLinks={prompt.docLinks}
       ></LineQuestion>
     {/if}
     {#if prompt.type === "Information"}
-      <LineInformation>{prompt.message}</LineInformation>
+      <LineInformation docLinks={prompt.docLinks}
+        >{prompt.message}</LineInformation
+      >
     {/if}
   {/each}
   <LineEnd active={prompts.prompts.at(-1)?.type === "Question"} />
 </section>
+
+<style>
+  section {
+    font-family: "JetBrains Mono";
+  }
+</style>

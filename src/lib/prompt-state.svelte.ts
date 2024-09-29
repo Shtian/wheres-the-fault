@@ -14,7 +14,6 @@ export function createPrompts() {
       return prompts;
     },
     moveNext: (nextId: string) => {
-      console.log("movenext", prompts);
       const nextPrompt = promptIndex.get(nextId);
       if (!nextPrompt) {
         throw new Error(`Prompt with id ${nextId} not found`);

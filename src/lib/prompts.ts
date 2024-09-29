@@ -44,12 +44,24 @@ const dynatraceErrorFlow: Prompt[] = [
     message:
       "Pust ut. Se gjerne over ressursbruk og antall requests (2) i Azure Portalen om det gjaldt ice.no",
     id: "application-responding-yes",
+    docLinks: [
+      {
+        id: "#app-insights-intro",
+        text: "Hvordan bruke app insights",
+      },
+    ],
   },
   {
     type: "Information",
     message:
       "Meld i fra på #ice-team-web. Aktiver incident workflow (1) og be om bistand.",
     id: "application-responding-no",
+    docLinks: [
+      {
+        id: "#app-insights-intro",
+        text: "Hvordan bruke app insights",
+      },
+    ],
   },
 ];
 
@@ -111,6 +123,12 @@ const iceWebTeamNotificationsErrorFlow: Prompt[] = [
         nextEntityId: "is-error-from-outdated-browser",
       },
     ],
+    docLinks: [
+      {
+        id: "#kql-1-2-3",
+        text: "KQL på 1-2-3",
+      },
+    ],
     id: "is-error-in-code",
   },
   {
@@ -137,6 +155,12 @@ const iceWebTeamNotificationsErrorFlow: Prompt[] = [
       {
         text: "OK 👍",
         nextEntityId: "is-error-from-outdated-browser",
+      },
+    ],
+    docLinks: [
+      {
+        id: "#appinsights-unminify-stacktrace",
+        text: "How-To",
       },
     ],
     id: "how-to-debug-minified-js",

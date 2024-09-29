@@ -1,6 +1,8 @@
-<h2>Våre monitoreringsverktøy - hvilke feil dukker opp hvor?</h2>
+<h2 id="our-tools-general">
+  Våre monitoreringsverktøy - hvilke feil dukker opp hvor?
+</h2>
 
-<h3>Kibana</h3>
+<h3 id="kibana-general">Kibana</h3>
 
 <p>
   Kibana bruker vi for å se på logger fra våre backend-tjenester i ice som er
@@ -10,7 +12,7 @@
   slack-kanal fra Kibana via ExceptionsMonitor.
 </p>
 
-<h3>Application Insights</h3>
+<h3 id="application-insights-general">Application Insights</h3>
 
 <p>
   Application Insights bruker vi for logging, for de tjenestene som hostes i
@@ -19,14 +21,14 @@
   Function vi har satt opp. Se github for mer detaljer.
 </p>
 
-<h3>Dynatrace</h3>
+<h3 id="dynatrace-general">Dynatrace</h3>
 
 <p>
   Operations bruker dynatrace til å overvåke generell oppetid på våre tjenester.
   Det er en rekke helsesjekker som pinger tjenestene våre på gitte endepunkt.
   Dersom en av disse feiler, vil dynatrace sende en melding i #ice-operations
   med info om at en tjeneste ikke lenger er tilgjengelig. Den vil også sende
-  beskjed når den eventuelt får et svar igjen, og si at alt er OK. :warning:
+  beskjed når den eventuelt får et svar igjen, og si at alt er OK.
 </p>
 <blockquote>
   <p>
@@ -36,7 +38,7 @@
   </p>
 </blockquote>
 
-<h3>Hotjar</h3>
+<h3 id="hotjar-general">Hotjar</h3>
 
 <p>
   Hotjar har flere funksjoner. Blant annet Heatmaps, Surveys, og Feedback. I

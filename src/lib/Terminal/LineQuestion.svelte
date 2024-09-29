@@ -4,11 +4,13 @@
   import LineEnd from "./LineEnd.svelte";
   import { type Question } from "./models";
   import { createPrompts } from "../prompt-state.svelte";
+  import DocLink from "./DocLink.svelte";
   interface LineQuestionProps {
     question: Question;
     active: boolean;
+    docLinks?: DocLink[];
   }
-  const { question, active }: LineQuestionProps = $props();
+  const { question, active, docLinks = [] }: LineQuestionProps = $props();
   const prompts = createPrompts();
 
   let numberOfChoices = question.choices.length;
@@ -40,16 +42,15 @@
   function handleKeyDown(e: KeyboardEvent) {
     if (!active) return;
     if (e.key === "Enter" || e.key === " ") {
-      console.log(selectedChoice);
       prompts.moveNext(selectedChoice);
     }
 
     if (e.key === "ArrowUp") {
-      console.log("ArrowUp");
+      e.preventDefault();
       decrementIndex();
     }
     if (e.key === "ArrowDown") {
-      console.log("ArrowDown");
+      e.preventDefault();
       incrementIndex();
     }
   }
@@ -62,13 +63,15 @@
   class:text-zinc-100={active}
 >
   <LineQuestionHeader>{question.question}</LineQuestionHeader>
+  {#each docLinks as docLink}
+    <DocLink {docLink} />
+  {/each}
   {#each question.choices as choice}
     <LineQuestionChoice
       name={question.id}
       answerText={choice.text}
       value={choice.nextEntityId}
       selected={selectedChoice === choice.nextEntityId}
-      {active}
     ></LineQuestionChoice>
   {/each}
 </div>

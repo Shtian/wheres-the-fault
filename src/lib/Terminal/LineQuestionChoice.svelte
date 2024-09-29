@@ -5,7 +5,7 @@
     active: boolean;
     selected: boolean;
   }
-  const { answerText, active, selected }: LineQuestionChoiceProps = $props();
+  const { answerText, selected }: LineQuestionChoiceProps = $props();
 </script>
 
 <span

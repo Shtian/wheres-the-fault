@@ -1,6 +1,7 @@
 <script>
-  import AppInsights from "./AppInsights.svelte";
-  import OurTools from "./OurTools.svelte";
+  import AppInsights from "./Sections/AppInsights.svelte";
+  import Hotjar from "./Sections/Hotjar.svelte";
+  import OurTools from "./Sections/OurTools.svelte";
 </script>
 
 <article
@@ -15,12 +16,16 @@
   </h1>
   <OurTools />
   <AppInsights />
+  <Hotjar></Hotjar>
 </article>
 
 <style>
-  article h1,
-  :global(article h2),
-  :global(article h3) {
-    word-spacing: -1rem;
+  article {
+    scroll-behavior: smooth;
+  }
+
+  article :global(h2),
+  article :global(h3) {
+    scroll-margin-top: 1rem;
   }
 </style>

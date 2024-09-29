@@ -1,6 +1,12 @@
+export type DocLink = {
+  id: string;
+  text: string;
+};
+
 export type Entity = {
   id: string;
   type: "Question" | "Information";
+  docLinks?: DocLink[];
 };
 
 export type Choice = {

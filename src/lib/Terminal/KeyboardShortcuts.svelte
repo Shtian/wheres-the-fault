@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
   import * as Dialog from "$lib/components/ui/dialog/index.js";
   import { Keyboard } from "lucide-svelte";
   let open = false;
