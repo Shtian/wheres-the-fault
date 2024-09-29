@@ -14,7 +14,7 @@
     }, interval * 1000);
   });
   function handleKeyDown(e: KeyboardEvent) {
-    if (e.key === "p") {
+    if (e.key === "b") {
       visible = !visible;
     }
   }
