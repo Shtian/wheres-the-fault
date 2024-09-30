@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { DocLink } from "./models";
+  import type { DocumentationLink } from "./models";
   import LineSidebarCharacter from "./LineSidebarCharacter.svelte";
   import { BookText } from "lucide-svelte";
   interface DocLinkProps {
-    docLink: DocLink;
+    docLink: DocumentationLink;
   }
 
   const { docLink }: DocLinkProps = $props();

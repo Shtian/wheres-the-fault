@@ -2,12 +2,12 @@
   import LineQuestionChoice from "./LineQuestionChoice.svelte";
   import LineQuestionHeader from "./LineQuestionHeader.svelte";
   import LineEnd from "./LineEnd.svelte";
-  import { type Question } from "./models";
+  import { type Question, type DocumentationLink } from "./models";
   import { createPrompts } from "../prompt-state.svelte";
   import DocLink from "./DocLink.svelte";
   interface LineQuestionProps {
     question: Question;
-    docLinks?: DocLink[];
+    docLinks?: DocumentationLink[];
   }
   const { question, docLinks = [] }: LineQuestionProps = $props();
   const prompts = createPrompts();
@@ -64,9 +64,7 @@
   {/each}
   {#each question.choices as choice}
     <LineQuestionChoice
-      name={question.id}
       answerText={choice.text}
-      value={choice.nextEntityId}
       selected={selectedChoice === choice.nextEntityId}
     ></LineQuestionChoice>
   {/each}

@@ -2,7 +2,6 @@
   import LineSidebarCharacter from "./LineSidebarCharacter.svelte";
   interface LineQuestionChoiceProps {
     answerText: string;
-    active: boolean;
     selected: boolean;
   }
   const { answerText, selected }: LineQuestionChoiceProps = $props();

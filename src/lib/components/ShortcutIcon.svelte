@@ -1,5 +1,10 @@
 <script lang="ts">
-  const { children } = $props();
+  import type { Snippet } from "svelte";
+
+  type ShortcutIconProps = {
+    children: Snippet;
+  }
+  const { children } : ShortcutIconProps = $props();
 </script>
 <span class="keyboard-shortcut bg-zinc-800 border border-zinc-700">{@render children()}</span>
 <style>

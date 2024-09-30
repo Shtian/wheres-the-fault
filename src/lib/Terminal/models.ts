@@ -1,4 +1,4 @@
-export type DocLink = {
+export type DocumentationLink = {
   id: string;
   text: string;
 };
@@ -6,7 +6,7 @@ export type DocLink = {
 export type Entity = {
   id: string;
   type: "Question" | "Information";
-  docLinks?: DocLink[];
+  docLinks?: DocumentationLink[];
 };
 
 export type Choice = {

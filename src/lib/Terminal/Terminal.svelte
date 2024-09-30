@@ -19,7 +19,6 @@
 
   $effect(() => {
     prompts.prompts.length;
-    // scroll to bottom of section
     scrollToBottom(sectionElement);
   });
 
@@ -54,7 +53,7 @@
       class="size-4 inline-block"
     /></Line
   >
-  <Line></Line>
+  <Line />
   {#each prompts.prompts as prompt, i}
     {#if prompt.type === "Question"}
       <LineQuestion question={prompt} docLinks={prompt.docLinks}></LineQuestion>
