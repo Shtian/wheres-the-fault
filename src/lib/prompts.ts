@@ -42,24 +42,24 @@ const dynatraceErrorFlow: Prompt[] = [
   {
     type: "Information",
     message:
-      "Pust ut. Se gjerne over ressursbruk og antall requests (2) i Azure Portalen om det gjaldt ice.no",
+      "Pust ut. Se gjerne over ressursbruk og antall requests i Azure Portalen om det gjaldt ice.no",
     id: "application-responding-yes",
     docLinks: [
       {
-        id: "#app-insights-intro",
-        text: "Hvordan bruke app insights",
+        id: "#appinsights-check-performance",
+        text: "Ytelse og ressursbruk",
       },
     ],
   },
   {
     type: "Information",
     message:
-      "Meld i fra på #ice-team-web. Aktiver incident workflow (1) og be om bistand.",
+      "Meld i fra på #ice-team-web. Aktiver incident workflow og be om bistand.",
     id: "application-responding-no",
     docLinks: [
       {
-        id: "#app-insights-intro",
-        text: "Hvordan bruke app insights",
+        id: "#incidents",
+        text: "Incident-håndtering",
       },
     ],
   },
@@ -99,13 +99,23 @@ const iceWebTeamNotificationsErrorFlow: Prompt[] = [
   },
   {
     type: "Question",
-    question: 'Er feilen en del av "Kjente feilmeldinger" (4)?',
+    question: 'Er feilen en del av "Kjente feilmeldinger"?',
     choices: [
       {
         text: COMMON_PROMPT_TEXTS.YES,
         nextEntityId: "follow-known-issue-instructions",
       },
       { text: COMMON_PROMPT_TEXTS.NO, nextEntityId: "is-error-in-code" },
+    ],
+    docLinks: [
+      {
+        id: "#common-errors-orderform",
+        text: "Kjente feilmeldinger - Orderform",
+      },
+      {
+        id: "#common-errors-ice-no",
+        text: "Kjente feilmeldinger - ice.no",
+      },
     ],
     id: "is-it-a-known-issue",
   },

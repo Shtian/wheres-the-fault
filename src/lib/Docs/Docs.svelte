@@ -1,26 +1,30 @@
 <script>
   import AppInsights from "./Sections/AppInsights.svelte";
+  import CommonErrors from "./Sections/CommonErrors.svelte";
   import Hotjar from "./Sections/Hotjar.svelte";
   import OurTools from "./Sections/OurTools.svelte";
 </script>
 
-<article
-  class="bg-zinc-800 p-4 prose prose-zinc dark:prose-invert flex-1 overflow-y-auto"
+<div
+  class="bg-zinc-800 h-50 max-w-none md:h-[100svh] w-100 overflow-y-auto flex-1"
 >
-  <h1>
-    Hjelp! Jeg har blitt <img
-      src="/images/butt-detective.png"
-      alt="Butt detective"
-      class="inline-block w-10 h-10 align-middle m-0"
-    />
-  </h1>
-  <OurTools />
-  <AppInsights />
-  <Hotjar></Hotjar>
-</article>
+  <article class="p-4 prose prose-zinc dark:prose-invert">
+    <h1>
+      Hjelp! Jeg har blitt <img
+        src="/images/butt-detective.png"
+        alt="Butt detective"
+        class="inline-block w-10 h-10 align-middle m-0"
+      />
+    </h1>
+    <OurTools />
+    <AppInsights />
+    <Hotjar />
+    <CommonErrors />
+  </article>
+</div>
 
 <style>
-  article {
+  div {
     scroll-behavior: smooth;
   }
 

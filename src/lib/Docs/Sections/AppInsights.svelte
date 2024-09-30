@@ -50,9 +50,20 @@
     href="https://learn.microsoft.com/en-us/kusto/query/kql-quick-reference?view=azure-monitor"
   >
     Microsoft sin dokumentasjon <ExternalLink
-      class="inline-block w-4 h-4 mb-[2px]"
+      class="inline-block size-4 mb-[2px]"
     />
   </a>.
+</p>
+
+<h3 id="appinsights-check-performance">Ytelse og ressursbruk</h3>
+<p>
+  I Azure Portalen kan vi få oversikt over ytelse og ressursbruk for ice.no. Det
+  enkleste er å starte med dette <a
+    target="_blank"
+    href="https://portal.azure.com/#@lysesecure.no/dashboard/arm/subscriptions/b38e1ed4-bcab-4714-8a90-cda040984c7c/resourcegroups/webteam-common/providers/microsoft.portal/dashboards/4f3c739c-5579-4333-adf5-fb2a282124cd"
+    >delte dashboardet <ExternalLink class="inline-block size-4 mb-[2px]" /></a
+  >, der finner du også lenker inn videre til andre ressurser for å grave seg
+  ned dypere.
 </p>
 
 <h3 id="appinsights-unminify-stacktrace">Unminify Stacktrace</h3>
