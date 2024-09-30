@@ -46,15 +46,15 @@
   }
 
   .visible {
-    bottom: 0;
+    bottom: -5px;
   }
 
   .speech-bubble {
     position: fixed;
     white-space: nowrap;
     overflow: hidden;
-    bottom: 100px;
-    right: 190px;
+    bottom: 120px;
+    right: 120px;
 
     background: white;
     color: black;
@@ -62,5 +62,12 @@
     border-radius: 0.5rem;
     transition: bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition-delay: 0.5s;
+  }
+
+  @media (min-width: 500px) {
+    .speech-bubble {
+      bottom: 100px;
+      right: 190px;
+    }
   }
 </style>
