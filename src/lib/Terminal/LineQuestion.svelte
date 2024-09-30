@@ -1,7 +1,6 @@
 <script lang="ts">
   import LineQuestionChoice from "./LineQuestionChoice.svelte";
   import LineQuestionHeader from "./LineQuestionHeader.svelte";
-  import LineEnd from "./LineEnd.svelte";
   import { type Question, type DocumentationLink } from "./models";
   import { createPrompts } from "../prompt-state.svelte";
   import DocLink from "./DocLink.svelte";

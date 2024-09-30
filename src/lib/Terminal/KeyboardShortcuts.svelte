@@ -20,7 +20,7 @@
 >
 <Dialog.Root bind:open>
   <Dialog.Trigger></Dialog.Trigger>
-  <Dialog.Content class="sm:max-w-[425px] font-sans">
+  <Dialog.Content class="bg-zinc-900 sm:max-w-[425px] font-sans">
     <Dialog.Header>
       <Dialog.Title>Tips, triks og hjelp</Dialog.Title>
       <Dialog.Description></Dialog.Description>
@@ -78,7 +78,9 @@
       </table>
     </article>
     <Dialog.Footer>
-      <Button type="button" on:click={() => (open = false)}>Lukk</Button>
+      <Button type="button" variant="outline" on:click={() => (open = false)}
+        >Lukk</Button
+      >
     </Dialog.Footer>
   </Dialog.Content>
 </Dialog.Root>

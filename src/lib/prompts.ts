@@ -42,7 +42,7 @@ const dynatraceErrorFlow: Prompt[] = [
   {
     type: "Information",
     message:
-      "Pust ut. Se gjerne over ressursbruk og antall requests i Azure Portalen om det gjaldt ice.no",
+      "Pust ut 😮‍💨 Se gjerne over ressursbruk og antall requests i Azure Portalen om det gjaldt ice.no",
     id: "application-responding-yes",
     docLinks: [
       {

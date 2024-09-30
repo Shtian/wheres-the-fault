@@ -12,10 +12,7 @@
     class="choice-form-control"
     class:text-zinc-400={!selected}
   >
-    {#if selected}
-      ● {answerText}
-    {:else}
-      ○ {answerText}
-    {/if}
+    {#if selected}●{:else}○{/if}
+    {answerText}
   </span>
 </span>
