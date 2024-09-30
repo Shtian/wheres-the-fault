@@ -8,6 +8,7 @@
   import { confetti } from "../confetti";
   import KeyboardShortcuts from "./KeyboardShortcuts.svelte";
   import { Keyboard } from "lucide-svelte";
+  import ShortcutIcon from "$lib/components/ShortcutIcon.svelte";
 
   const prompts = createPrompts();
   let sectionElement: HTMLElement;
@@ -48,7 +49,11 @@
 >
   <KeyboardShortcuts />
   <LineHeader>Velkommen til WTF (Where's The Fault)!</LineHeader>
-  <Line>ctrl+h for hjelp <Keyboard class="size-4 inline-block" /></Line>
+  <Line
+    ><ShortcutIcon>H</ShortcutIcon> for hjelp <Keyboard
+      class="size-4 inline-block"
+    /></Line
+  >
   <Line></Line>
   {#each prompts.prompts as prompt, i}
     {#if prompt.type === "Question"}

@@ -2,6 +2,7 @@
   import { Button } from "$lib/components/ui/button/index.js";
   import * as Dialog from "$lib/components/ui/dialog/index.js";
   import { Keyboard } from "lucide-svelte";
+  import ShortcutIcon from "$lib/components/ShortcutIcon.svelte";
   let open = false;
   function handleKeyDown(e: KeyboardEvent) {
     if (e.key === "h") {
@@ -36,28 +37,37 @@
         </thead>
         <tbody>
           <tr>
-            <td>Velg alternativ</td>
-            <td>Enter / Space</td>
+            <td>Endre alternativ</td>
+            <td
+              ><ShortcutIcon>↑</ShortcutIcon> / <ShortcutIcon>↓</ShortcutIcon
+              ></td
+            >
           </tr>
           <tr>
-            <td>Endre alternativ</td>
-            <td>Pil opp / pil ned</td>
+            <td>Velg alternativ</td>
+            <td
+              ><ShortcutIcon>↵</ShortcutIcon> / <ShortcutIcon>␣</ShortcutIcon
+              ></td
+            >
           </tr>
           <tr>
             <td>Angre</td>
-            <td>Backspace</td>
+            <td><ShortcutIcon>⌫</ShortcutIcon></td>
           </tr>
           <tr>
             <td>Start på nytt</td>
-            <td>ctrl + L</td>
+            <td
+              ><ShortcutIcon>CTRL</ShortcutIcon> + <ShortcutIcon>L</ShortcutIcon
+              ></td
+            >
           </tr>
           <tr>
-            <td>???</td>
-            <td>C</td>
+            <td>🎉</td>
+            <td><ShortcutIcon>C</ShortcutIcon></td>
           </tr>
           <tr>
-            <td>Hmm 🤔</td>
-            <td>B</td>
+            <td>🤔</td>
+            <td><ShortcutIcon>B</ShortcutIcon></td>
           </tr>
         </tbody>
       </table>
