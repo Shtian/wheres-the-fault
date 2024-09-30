@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button/index.js";
   import * as Dialog from "$lib/components/ui/dialog/index.js";
-  import { Keyboard } from "lucide-svelte";
+  import { CircleHelp } from "lucide-svelte";
   import ShortcutIcon from "$lib/components/ShortcutIcon.svelte";
   let open = false;
   function handleKeyDown(e: KeyboardEvent) {
@@ -13,21 +13,26 @@
 
 <svelte:window on:keydown={handleKeyDown} />
 <Button
-  class="absolute top-2 right-2"
+  class="fixed top-2 left-2"
   variant="outline"
   size="icon"
-  on:click={() => (open = true)}><Keyboard class="w-5 h-5" /></Button
+  on:click={() => (open = true)}><CircleHelp class="w-5 h-5" /></Button
 >
 <Dialog.Root bind:open>
   <Dialog.Trigger></Dialog.Trigger>
   <Dialog.Content class="sm:max-w-[425px] font-sans">
     <Dialog.Header>
-      <Dialog.Title>Tastatur-snarveier</Dialog.Title>
-      <Dialog.Description>
-        Disse snarveiene er tilgjengelig for å navigere terminalen:
-      </Dialog.Description>
+      <Dialog.Title>Tips, triks og hjelp</Dialog.Title>
+      <Dialog.Description></Dialog.Description>
     </Dialog.Header>
-    <article class="prose prose-zinc dark:prose-invert">
+    <article
+      class="prose prose-zinc dark:prose-invert max-h-[60vh] overflow-y-auto"
+    >
+      <p>
+        Er du på mobilen? Trykk på tastaturknappen på toppen for å åpne et
+        tastatur
+      </p>
+      <p>Disse snarveiene er tilgjengelig for å navigere terminalen:</p>
       <table>
         <thead>
           <tr>

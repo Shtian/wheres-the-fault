@@ -15,11 +15,13 @@ export type Choice = {
 };
 
 export type Question = Entity & {
+  type: "Question";
   question: string;
   choices: Choice[];
 };
 
 export type Information = Entity & {
+  type: "Information";
   message: string;
   nextQuestion?: Entity["id"];
 };

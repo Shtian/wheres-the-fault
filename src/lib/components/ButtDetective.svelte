@@ -50,16 +50,9 @@
   }
 
   .speech-bubble {
-    position: fixed;
-    white-space: nowrap;
-    overflow: hidden;
+    @apply shadow-md fixed whitespace-nowrap overflow-hidden bg-zinc-50 text-zinc-900 rounded-md py-2 px-4;
     bottom: 120px;
     right: 120px;
-
-    background: white;
-    color: black;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
     transition: bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition-delay: 0.5s;
   }

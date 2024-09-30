@@ -7,51 +7,47 @@
   import DocLink from "./DocLink.svelte";
   interface LineQuestionProps {
     question: Question;
-    active: boolean;
     docLinks?: DocLink[];
   }
-  const { question, active, docLinks = [] }: LineQuestionProps = $props();
+  const { question, docLinks = [] }: LineQuestionProps = $props();
   const prompts = createPrompts();
+  const active = $derived(
+    (() => {
+      const isActive = prompts.currentPrompt?.id === question.id;
+      return isActive;
+    })()
+  );
 
-  let numberOfChoices = question.choices.length;
-  let selectedIndex = $state(0);
-  let selectedChoice = $state(question.choices[selectedIndex].nextEntityId);
+  // Need to keep track of selected index for history
+  let previousChoiceIndex = 0;
+  let selectedIndex = $derived(
+    (() => {
+      if (!active) return previousChoiceIndex;
+      previousChoiceIndex = prompts.currentChoiceIndex;
+      return prompts.currentChoiceIndex;
+    })()
+  );
 
-  function incrementIndex() {
-    if (numberOfChoices === 1) return;
-    if (selectedIndex === numberOfChoices - 1) {
-      selectedIndex = 0;
-      return;
-    }
-    selectedIndex += 1;
-  }
-
-  function decrementIndex() {
-    if (numberOfChoices === 1) return;
-    if (selectedIndex === 0) {
-      selectedIndex = numberOfChoices - 1;
-      return;
-    }
-    selectedIndex -= 1;
-  }
-
-  $effect(() => {
-    selectedChoice = question.choices[selectedIndex].nextEntityId;
-  });
+  let selectedChoice = $derived(
+    (() => {
+      return question.choices[selectedIndex].nextEntityId;
+    })()
+  );
 
   function handleKeyDown(e: KeyboardEvent) {
     if (!active) return;
     if (e.key === "Enter" || e.key === " ") {
-      prompts.moveNext(selectedChoice);
+      e.preventDefault();
+      prompts.moveNext();
     }
 
     if (e.key === "ArrowUp") {
       e.preventDefault();
-      decrementIndex();
+      prompts.decrementChoiceIndex();
     }
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      incrementIndex();
+      prompts.incrementChoiceIndex();
     }
   }
 </script>

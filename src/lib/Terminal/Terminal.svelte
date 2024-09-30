@@ -9,6 +9,7 @@
   import KeyboardShortcuts from "./KeyboardShortcuts.svelte";
   import { Keyboard } from "lucide-svelte";
   import ShortcutIcon from "$lib/components/ShortcutIcon.svelte";
+  import OnScreenKeyboard from "./OnScreenKeyboard.svelte";
 
   const prompts = createPrompts();
   let sectionElement: HTMLElement;
@@ -21,7 +22,6 @@
     // scroll to bottom of section
     scrollToBottom(sectionElement);
   });
-
   function handleKeyDown(e: KeyboardEvent) {
     // if repeated keypress, ignore
     if (e.repeat) return;
@@ -47,6 +47,7 @@
   bind:this={sectionElement}
   class="relative bg-zinc-900 h-50 md:h-[100svh] w-100 font-mono px-4 py-2 flex flex-col text-zinc-400 overflow-y-auto flex-1"
 >
+  <OnScreenKeyboard />
   <KeyboardShortcuts />
   <LineHeader>Velkommen til WTF (Where's The Fault)!</LineHeader>
   <Line
@@ -57,11 +58,7 @@
   <Line></Line>
   {#each prompts.prompts as prompt, i}
     {#if prompt.type === "Question"}
-      <LineQuestion
-        active={i == prompts.prompts.length - 1}
-        question={prompt}
-        docLinks={prompt.docLinks}
-      ></LineQuestion>
+      <LineQuestion question={prompt} docLinks={prompt.docLinks}></LineQuestion>
     {/if}
     {#if prompt.type === "Information"}
       <LineInformation docLinks={prompt.docLinks}
