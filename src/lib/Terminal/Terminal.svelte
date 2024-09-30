@@ -22,16 +22,15 @@
     // scroll to bottom of section
     scrollToBottom(sectionElement);
   });
+
   function handleKeyDown(e: KeyboardEvent) {
     // if repeated keypress, ignore
     if (e.repeat) return;
 
-    // ctrl + l
-    if (e.key === "l" && e.ctrlKey) {
+    if (e.ctrlKey && e.key === "l") {
       prompts.clear();
     }
 
-    // c
     if (e.key === "c" && !e.ctrlKey && !e.metaKey) {
       confetti();
     }
