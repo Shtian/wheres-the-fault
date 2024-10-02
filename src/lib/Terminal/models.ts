@@ -1,5 +1,5 @@
 export type DocumentationLink = {
-  id: string;
+  href: string;
   text: string;
 };
 

@@ -1,4 +1,5 @@
 import type { Prompt } from "./Terminal/models";
+import { SLACK_CANVAS_LINKS } from "./slack-section-links";
 
 const COMMON_PROMPT_TEXTS = {
   YES: "Ja ✔",
@@ -45,10 +46,8 @@ const dynatraceErrorFlow: Prompt[] = [
       "Pust ut 😮‍💨 Se gjerne over ressursbruk og antall requests i Azure Portalen om det gjaldt ice.no",
     id: "application-responding-yes",
     docLinks: [
-      {
-        id: "#appinsights-check-performance",
-        text: "Ytelse og ressursbruk",
-      },
+      SLACK_CANVAS_LINKS.PERFORMANCE,
+      SLACK_CANVAS_LINKS.PERFORMANCE_DASHBOARD,
     ],
   },
   {
@@ -56,12 +55,7 @@ const dynatraceErrorFlow: Prompt[] = [
     message:
       "Meld i fra på #ice-team-web. Aktiver incident workflow og be om bistand.",
     id: "application-responding-no",
-    docLinks: [
-      {
-        id: "#incidents",
-        text: "Incident-håndtering",
-      },
-    ],
+    docLinks: [SLACK_CANVAS_LINKS.INCIDENTS],
   },
 ];
 
@@ -108,14 +102,8 @@ const iceWebTeamNotificationsErrorFlow: Prompt[] = [
       { text: COMMON_PROMPT_TEXTS.NO, nextEntityId: "is-error-in-code" },
     ],
     docLinks: [
-      {
-        id: "#common-errors-orderform",
-        text: "Kjente feilmeldinger - Orderform",
-      },
-      {
-        id: "#common-errors-ice-no",
-        text: "Kjente feilmeldinger - ice.no",
-      },
+      SLACK_CANVAS_LINKS.KNOWN_ISSUES_ORDERFORM,
+      SLACK_CANVAS_LINKS.KNOWN_ISSUES_ICE_NO,
     ],
     id: "is-it-a-known-issue",
   },
@@ -133,12 +121,7 @@ const iceWebTeamNotificationsErrorFlow: Prompt[] = [
         nextEntityId: "is-error-from-outdated-browser",
       },
     ],
-    docLinks: [
-      {
-        id: "#kql-1-2-3",
-        text: "KQL på 1-2-3",
-      },
-    ],
+    docLinks: [SLACK_CANVAS_LINKS.KQL_1_2_3, SLACK_CANVAS_LINKS.KIBANA_1_2_3],
     id: "is-error-in-code",
   },
   {
@@ -167,12 +150,7 @@ const iceWebTeamNotificationsErrorFlow: Prompt[] = [
         nextEntityId: "is-error-from-outdated-browser",
       },
     ],
-    docLinks: [
-      {
-        id: "#appinsights-unminify-stacktrace",
-        text: "How-To",
-      },
-    ],
+    docLinks: [SLACK_CANVAS_LINKS.UNMINIFIY_STACKTRACE],
     id: "how-to-debug-minified-js",
   },
   {

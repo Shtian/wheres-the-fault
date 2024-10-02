@@ -12,6 +12,7 @@
 <span
   ><LineSidebarCharacter>│</LineSidebarCharacter><BookText
     class="-ml-[4px] mr-2 inline-block size-4"
-  /><a href={docLink.id} class="underline hover:text-zinc-100">{docLink.text}</a
+  /><a target="_blank" href={docLink.href} class="underline hover:text-zinc-100"
+    >{docLink.text}</a
   ></span
 >
