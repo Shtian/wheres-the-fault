@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LineSidebarCharacter from "./LineSidebarCharacter.svelte";
+  import LineSidebarCharacter from "$lib/Terminal/LineFeeds/LineSidebarCharacter.svelte";
   import type { Snippet } from "svelte";
   type LineQuestionHeaderProps = {
     children: Snippet;

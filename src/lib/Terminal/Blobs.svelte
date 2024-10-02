@@ -8,39 +8,42 @@
   $effect(() => {
     const interval = setInterval(() => {
       blobMovementToggle = Math.floor(Math.random() * 6) + 1;
-    }, 20000);
+    }, 10000);
     return () => clearInterval(interval);
   });
 </script>
 
 <div class="blob-wrapper relative h-full w-full overflow-hidden md:h-screen">
   <span
-    class="blob-1 size-12 rounded-full bg-sky-400 opacity-30 blur-2xl transition-transform duration-[20000ms] md:size-24 md:opacity-50"
+    class="blob blob-1 size-12 rounded-full bg-sky-400 opacity-30 blur-2xl transition-transform md:size-24 md:opacity-50"
     class:move-1={blobMovementToggle === 1}
   ></span>
   <span
-    class="blob-2 size-32 rounded-full bg-emerald-400 opacity-30 blur-2xl transition-transform duration-[20000ms] md:size-64 md:opacity-50"
+    class="blob blob-2 size-32 rounded-full bg-emerald-400 opacity-30 blur-2xl transition-transform md:size-64 md:opacity-50"
     class:move-2={blobMovementToggle === 2}
   ></span>
   <span
-    class="blob-3 size-20 rounded-full bg-amber-400 opacity-30 blur-2xl transition-transform duration-[20000ms] md:size-40 md:opacity-50"
+    class="blob blob-3 size-20 rounded-full bg-amber-400 opacity-30 blur-2xl transition-transform md:size-40 md:opacity-50"
     class:move-3={blobMovementToggle === 3}
   ></span>
   <span
-    class="blob-4 size-16 rounded-full bg-red-400 opacity-30 blur-2xl transition-transform duration-[20000ms] md:size-32 md:opacity-50"
+    class="blob blob-4 size-16 rounded-full bg-red-400 opacity-30 blur-2xl transition-transform md:size-32 md:opacity-50"
     class:move-4={blobMovementToggle === 4}
   ></span>
   <span
-    class="blob-5 size-20 rounded-full bg-purple-400 opacity-30 blur-2xl transition-transform duration-[20000ms] md:size-40 md:opacity-50"
+    class="blob blob-5 size-20 rounded-full bg-purple-400 opacity-30 blur-2xl transition-transform md:size-40 md:opacity-50"
     class:move-5={blobMovementToggle === 5}
   ></span>
   <span
-    class="blob-6 size-12 rounded-full bg-indigo-400 opacity-30 blur-2xl transition-transform duration-[20000ms] md:size-24 md:opacity-50"
+    class="blob blob-6 size-12 rounded-full bg-indigo-400 opacity-30 blur-2xl transition-transform md:size-24 md:opacity-50"
     class:move-6={blobMovementToggle === 6}
   ></span>
 </div>
 
 <style lang="postcss">
+  .blob {
+    transition-duration: 10000ms;
+  }
   .blob-wrapper {
     display: grid;
   }

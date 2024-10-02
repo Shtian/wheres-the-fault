@@ -1,8 +1,8 @@
 <script lang="ts">
-  import DocLink from "./DocLink.svelte";
-  import LineSidebarCharacter from "./LineSidebarCharacter.svelte";
+  import DocLink from "$lib/Terminal/LineFeeds/DocLink.svelte";
+  import LineSidebarCharacter from "$lib/Terminal/LineFeeds/LineSidebarCharacter.svelte";
   import type { Snippet } from "svelte";
-  import type { DocumentationLink } from "./models";
+  import type { DocumentationLink } from "$lib/Terminal/models";
   type LineInformationProps = {
     children?: Snippet;
     docLinks?: DocumentationLink[];

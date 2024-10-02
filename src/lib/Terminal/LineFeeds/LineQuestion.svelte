@@ -1,9 +1,9 @@
 <script lang="ts">
   import LineQuestionChoice from "./LineQuestionChoice.svelte";
   import LineQuestionHeader from "./LineQuestionHeader.svelte";
-  import { type Question, type DocumentationLink } from "./models";
-  import { createPrompts } from "../prompt-state.svelte";
-  import DocLink from "./DocLink.svelte";
+  import { type Question, type DocumentationLink } from "$lib/Terminal/models";
+  import { createPrompts } from "$lib/prompt-state.svelte";
+  import DocLink from "$lib/Terminal/LineFeeds/DocLink.svelte";
   interface LineQuestionProps {
     question: Question;
     docLinks?: DocumentationLink[];

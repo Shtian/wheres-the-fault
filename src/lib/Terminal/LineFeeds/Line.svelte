@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import LineSidebarCharacter from "./LineSidebarCharacter.svelte";
+  import LineSidebarCharacter from "$lib/Terminal/LineFeeds/LineSidebarCharacter.svelte";
   type LineProps = {
     children?: Snippet;
   };

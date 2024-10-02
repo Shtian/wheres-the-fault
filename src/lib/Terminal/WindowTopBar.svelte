@@ -14,19 +14,19 @@
 >
   <button
     type="button"
-    class="size-[12px] rounded-full bg-[#FF5F57]"
+    class="size-3 rounded-full bg-[#FF5F57]"
     on:click={() => handleButtonClick("close")}
     ><span class="sr-only">close window</span></button
   >
   <button
     type="button"
-    class="size-[12px] rounded-full bg-[#FEBC2E]"
+    class="size-3 rounded-full bg-[#FEBC2E]"
     on:click={() => handleButtonClick("minimize")}
     ><span class="sr-only">minimize window</span></button
   >
   <button
     type="button"
-    class="size-[12px] rounded-full bg-[#28C840]"
+    class="size-3 rounded-full bg-[#28C840]"
     on:click={() => handleButtonClick("maximize")}
     ><span class="sr-only">maximize window</span></button
   >

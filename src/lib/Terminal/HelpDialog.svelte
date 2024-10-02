@@ -1,23 +1,10 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button/index.js";
   import * as Dialog from "$lib/components/ui/dialog/index.js";
-  import { CircleHelp } from "lucide-svelte";
   import ShortcutIcon from "$lib/components/ShortcutIcon.svelte";
-  let open = false;
-  function handleKeyDown(e: KeyboardEvent) {
-    if (e.key === "h") {
-      open = true;
-    }
-  }
+  let { open = $bindable() } = $props();
 </script>
 
-<svelte:window on:keydown={handleKeyDown} />
-<Button
-  class="fixed right-2 top-2"
-  variant="outline"
-  size="icon"
-  on:click={() => (open = true)}><CircleHelp class="h-5 w-5" /></Button
->
 <Dialog.Root bind:open>
   <Dialog.Trigger></Dialog.Trigger>
   <Dialog.Content class="bg-zinc-900 font-sans sm:max-w-[425px]">

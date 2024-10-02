@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { DocumentationLink } from "./models";
-  import LineSidebarCharacter from "./LineSidebarCharacter.svelte";
+  import type { DocumentationLink } from "../models";
+  import LineSidebarCharacter from "$lib/Terminal/LineFeeds/LineSidebarCharacter.svelte";
   import { BookText } from "lucide-svelte";
   interface DocLinkProps {
     docLink: DocumentationLink;
