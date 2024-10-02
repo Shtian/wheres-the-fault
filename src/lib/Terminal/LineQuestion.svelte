@@ -58,10 +58,10 @@
   class:text-zinc-100={active}
 >
   <LineQuestionHeader>{question.question}</LineQuestionHeader>
-  {#each docLinks as docLink}
+  {#each docLinks as docLink (docLink.text)}
     <DocLink {docLink} />
   {/each}
-  {#each question.choices as choice}
+  {#each question.choices as choice (choice.nextEntityId)}
     <LineQuestionChoice
       answerText={choice.text}
       selected={selectedChoice === choice.nextEntityId}

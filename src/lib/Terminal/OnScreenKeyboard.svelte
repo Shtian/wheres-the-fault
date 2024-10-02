@@ -10,6 +10,7 @@
   } from "lucide-svelte";
   import { fly } from "svelte/transition";
   import { createPrompts } from "$lib/prompt-state.svelte";
+  import { createEventDispatcher } from "svelte";
 
   const prompts = createPrompts();
   const actions = ["Up", "Down", "Select", "Undo", "Reset"] as const;
@@ -35,17 +36,23 @@
         break;
     }
   }
+
+  const dispatch = createEventDispatcher();
+  function handleToggleClick() {
+    open = !open;
+    dispatch("toggle", { open });
+  }
 </script>
 
 <Button
   class="fixed left-14 top-2"
   variant="outline"
   size="icon"
-  on:click={() => (open = !open)}><Keyboard class="h-5 w-5" /></Button
+  on:click={handleToggleClick}><Keyboard class="h-5 w-5" /></Button
 >
 {#if open}
   <div
-    class="fixed bottom-2 left-[50%] flex -translate-x-[50%] gap-2 rounded-md border border-zinc-600 bg-zinc-700 p-2 shadow-md"
+    class="flex gap-2 rounded-md border border-zinc-700 bg-zinc-800 p-2 shadow-md"
     transition:fly={{ y: 50, duration: 200 }}
   >
     <Button variant="outline" size="icon" on:click={() => actionClick("Up")}>

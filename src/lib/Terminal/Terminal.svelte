@@ -11,6 +11,9 @@
   import ShortcutIcon from "$lib/components/ShortcutIcon.svelte";
   import OnScreenKeyboard from "./OnScreenKeyboard.svelte";
   import Blobs from "./Blobs.svelte";
+  import { fly } from "svelte/transition";
+  import { flip } from "svelte/animate";
+  import { quintOut } from "svelte/easing";
 
   const prompts = createPrompts();
 
@@ -43,46 +46,35 @@
 </script>
 
 <svelte:window on:keydown={handleKeyDown} />
-<div class="terminal-wrapper flex-1 overflow-hidden bg-zinc-900">
-  <div class="w-100 terminal-wrapper relative overflow-hidden md:h-screen">
-    <Blobs></Blobs>
-  </div>
-  <section
-    bind:this={sectionElement}
-    class="w-100 relative flex flex-col overflow-y-auto px-4 py-2 font-mono text-zinc-400 md:h-screen"
+
+<section
+  bind:this={sectionElement}
+  class="relative flex h-full flex-col overflow-y-auto px-4 py-2 font-mono text-zinc-400 md:h-[90svh] md:w-[700px] md:self-center md:rounded-lg md:border md:border-zinc-700 md:bg-zinc-900 md:opacity-95"
+>
+  <LineHeader>Velkommen til WTF (Where's The Fault)!</LineHeader>
+  <Line
+    ><ShortcutIcon>H</ShortcutIcon> for hjelp <Keyboard
+      class="inline-block size-4"
+    /></Line
   >
-    <LineHeader>Velkommen til WTF (Where's The Fault)!</LineHeader>
-    <Line
-      ><ShortcutIcon>H</ShortcutIcon> for hjelp <Keyboard
-        class="inline-block size-4"
-      /></Line
-    >
-    <Line />
-    {#each prompts.prompts as prompt}
-      {#if prompt.type === "Question"}
-        <LineQuestion question={prompt} docLinks={prompt.docLinks}
-        ></LineQuestion>
-      {/if}
-      {#if prompt.type === "Information"}
-        <LineInformation docLinks={prompt.docLinks}
-          >{prompt.message}</LineInformation
-        >
-      {/if}
-    {/each}
-    <LineEnd active={prompts.prompts.at(-1)?.type === "Question"} />
-    <OnScreenKeyboard />
-    <KeyboardShortcuts />
-  </section>
-</div>
+  <Line />
+  {#each prompts.prompts as prompt (prompt.id)}
+    {#if prompt.type === "Question"}
+      <LineQuestion question={prompt} docLinks={prompt.docLinks}></LineQuestion>
+    {/if}
+    {#if prompt.type === "Information"}
+      <LineInformation docLinks={prompt.docLinks}
+        >{prompt.message}</LineInformation
+      >
+    {/if}
+  {/each}
+  <LineEnd active={prompts.prompts.at(-1)?.type === "Question"} />
+  <OnScreenKeyboard />
+  <KeyboardShortcuts />
+</section>
 
 <style>
   section {
     font-family: "JetBrains Mono";
-  }
-  .terminal-wrapper {
-    display: grid;
-  }
-  .terminal-wrapper > * {
-    grid-area: 1 / 1;
   }
 </style>

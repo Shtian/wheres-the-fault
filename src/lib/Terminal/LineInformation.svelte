@@ -15,6 +15,6 @@
   class="my-[2px] ml-[4.3px] border-l-[2px] border-solid border-l-zinc-400 pl-[12px] text-zinc-100"
   >{@render children?.()}</span
 >
-{#each docLinks as docLink}
+{#each docLinks as docLink (docLink.text)}
   <DocLink {docLink} />
 {/each}
