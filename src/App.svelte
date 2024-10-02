@@ -1,6 +1,5 @@
 <script lang="ts">
   import Terminal from "./lib/Terminal/Terminal.svelte";
-  import Docs from "./lib/Docs/Docs.svelte";
   import ButtDetective from "$lib/components/ButtDetective.svelte";
 </script>
 
