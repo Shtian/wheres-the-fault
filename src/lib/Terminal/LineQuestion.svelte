@@ -14,7 +14,7 @@
     (() => {
       const isActive = prompts.currentPrompt?.id === question.id;
       return isActive;
-    })()
+    })(),
   );
 
   // Need to keep track of selected index for history
@@ -24,13 +24,13 @@
       if (!active) return previousChoiceIndex;
       previousChoiceIndex = prompts.currentChoiceIndex;
       return prompts.currentChoiceIndex;
-    })()
+    })(),
   );
 
   let selectedChoice = $derived(
     (() => {
       return question.choices[selectedIndex].nextEntityId;
-    })()
+    })(),
   );
 
   function handleKeyDown(e: KeyboardEvent) {

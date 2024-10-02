@@ -13,20 +13,20 @@
 
 <svelte:window on:keydown={handleKeyDown} />
 <Button
-  class="fixed top-2 left-2"
+  class="fixed left-2 top-2"
   variant="outline"
   size="icon"
-  on:click={() => (open = true)}><CircleHelp class="w-5 h-5" /></Button
+  on:click={() => (open = true)}><CircleHelp class="h-5 w-5" /></Button
 >
 <Dialog.Root bind:open>
   <Dialog.Trigger></Dialog.Trigger>
-  <Dialog.Content class="bg-zinc-900 sm:max-w-[425px] font-sans">
+  <Dialog.Content class="bg-zinc-900 font-sans sm:max-w-[425px]">
     <Dialog.Header>
       <Dialog.Title>Tips, triks og hjelp</Dialog.Title>
       <Dialog.Description></Dialog.Description>
     </Dialog.Header>
     <article
-      class="prose prose-zinc dark:prose-invert max-h-[60vh] overflow-y-auto"
+      class="prose prose-zinc max-h-[60vh] overflow-y-auto dark:prose-invert"
     >
       <p>
         Er du på mobilen? Trykk på tastaturknappen på toppen for å åpne et

@@ -14,19 +14,19 @@
 </script>
 
 <span
-  class="blur-2xl blob-1 size-12 md:size-32 bg-sky-400 rounded-full transition-transform duration-[20000ms] opacity-20 md:opacity-5"
+  class="blob-1 size-12 rounded-full bg-sky-400 opacity-20 blur-2xl transition-transform duration-[20000ms] md:size-32 md:opacity-5"
   class:move-1={blobMovementToggle === 1}
 ></span>
 <span
-  class="blur-2xl blob-2 size-12 md:size-48 bg-emerald-400 rounded-full transition-transform duration-[20000ms] opacity-20 md:opacity-5"
+  class="blob-2 size-12 rounded-full bg-emerald-400 opacity-20 blur-2xl transition-transform duration-[20000ms] md:size-48 md:opacity-5"
   class:move-2={blobMovementToggle === 2}
 ></span>
 <span
-  class="blur-2xl blob-3 size-20 md:size-80 bg-amber-400 rounded-full transition-transform duration-[20000ms] opacity-20 md:opacity-5"
+  class="blob-3 size-20 rounded-full bg-amber-400 opacity-20 blur-2xl transition-transform duration-[20000ms] md:size-80 md:opacity-5"
   class:move-3={blobMovementToggle === 3}
 ></span>
 <span
-  class="blur-2xl blob-4 size-16 md:size-64 bg-red-400 rounded-full transition-transform duration-[20000ms] opacity-20 md:opacity-5"
+  class="blob-4 size-16 rounded-full bg-red-400 opacity-20 blur-2xl transition-transform duration-[20000ms] md:size-64 md:opacity-5"
   class:move-4={blobMovementToggle === 4}
 ></span>
 

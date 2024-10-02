@@ -43,18 +43,18 @@
 </script>
 
 <svelte:window on:keydown={handleKeyDown} />
-<div class="flex-1 bg-zinc-900 terminal-wrapper overflow-hidden">
-  <div class="relative md:h-screen w-100 terminal-wrapper overflow-hidden">
+<div class="terminal-wrapper flex-1 overflow-hidden bg-zinc-900">
+  <div class="w-100 terminal-wrapper relative overflow-hidden md:h-screen">
     <Blobs></Blobs>
   </div>
   <section
     bind:this={sectionElement}
-    class="relative md:h-screen w-100 font-mono px-4 py-2 flex flex-col text-zinc-400 overflow-y-auto"
+    class="w-100 relative flex flex-col overflow-y-auto px-4 py-2 font-mono text-zinc-400 md:h-screen"
   >
     <LineHeader>Velkommen til WTF (Where's The Fault)!</LineHeader>
     <Line
       ><ShortcutIcon>H</ShortcutIcon> for hjelp <Keyboard
-        class="size-4 inline-block"
+        class="inline-block size-4"
       /></Line
     >
     <Line />

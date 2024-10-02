@@ -38,34 +38,34 @@
 </script>
 
 <Button
-  class="fixed top-2 left-14"
+  class="fixed left-14 top-2"
   variant="outline"
   size="icon"
-  on:click={() => (open = !open)}><Keyboard class="w-5 h-5" /></Button
+  on:click={() => (open = !open)}><Keyboard class="h-5 w-5" /></Button
 >
 {#if open}
   <div
-    class="fixed bottom-2 left-[50%] -translate-x-[50%] flex gap-2 p-2 bg-zinc-700 border border-zinc-600 rounded-md shadow-md"
+    class="fixed bottom-2 left-[50%] flex -translate-x-[50%] gap-2 rounded-md border border-zinc-600 bg-zinc-700 p-2 shadow-md"
     transition:fly={{ y: 50, duration: 200 }}
   >
     <Button variant="outline" size="icon" on:click={() => actionClick("Up")}>
-      <ArrowUp class="w-5 h-5" />
+      <ArrowUp class="h-5 w-5" />
     </Button>
     <Button variant="outline" size="icon" on:click={() => actionClick("Down")}>
-      <ArrowDown class="w-5 h-5" />
+      <ArrowDown class="h-5 w-5" />
     </Button>
     <Button
       variant="outline"
       size="icon"
       on:click={() => actionClick("Select")}
     >
-      <CornerDownLeft class="w-5 h-5" />
+      <CornerDownLeft class="h-5 w-5" />
     </Button>
     <Button variant="outline" size="icon" on:click={() => actionClick("Undo")}>
-      <Undo class="w-5 h-5" />
+      <Undo class="h-5 w-5" />
     </Button>
     <Button variant="outline" size="icon" on:click={() => actionClick("Reset")}>
-      <Trash2 class="w-5 h-5" />
+      <Trash2 class="h-5 w-5" />
     </Button>
   </div>
 {/if}

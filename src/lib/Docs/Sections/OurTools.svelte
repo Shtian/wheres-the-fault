@@ -65,7 +65,7 @@
   <a
     href="https://confluence.ice.local/pages/viewpage.action?spaceKey=IT&title=Incident+handling"
     target="_blank"
-    >Confluence <ExternalLink class="inline-block w-4 h-4 mb-[2px]" /></a
+    >Confluence <ExternalLink class="mb-[2px] inline-block h-4 w-4" /></a
   >.
 </p>
 
@@ -75,14 +75,14 @@
     Slack - <a
       target="_blank"
       href="https://lyse.slack.com/archives/C079X056K1T"
-      >#ice-operations <ExternalLink class="inline-block w-4 h-4 mb-[2px]" /></a
+      >#ice-operations <ExternalLink class="mb-[2px] inline-block h-4 w-4" /></a
     >
   </li>
   <li>
     Slack - <a
       target="_blank"
       href="https://lyse.slack.com/archives/C07A93M6TEF"
-      >#ice-incidents <ExternalLink class="inline-block w-4 h-4 mb-[2px]" /></a
+      >#ice-incidents <ExternalLink class="mb-[2px] inline-block h-4 w-4" /></a
     >
   </li>
   <li>Teams - <code>IT - NOC (English Only)</code></li>

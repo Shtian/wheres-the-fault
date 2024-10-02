@@ -5,10 +5,9 @@
 </script>
 
 <main
-  class="flex flex-col h-screen overflow-hidden overflow-y-auto md:flex-row font-sans"
+  class="flex h-screen flex-col overflow-hidden overflow-y-auto font-sans md:flex-row"
 >
   <Terminal />
-  <Docs />
 </main>
 <ButtDetective />
 

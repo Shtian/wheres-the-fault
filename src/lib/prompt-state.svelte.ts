@@ -33,7 +33,7 @@ export function createPrompts() {
       const nextPrompt = promptIndex.get(selectedChoice.nextEntityId);
       if (!nextPrompt) {
         throw new Error(
-          `Prompt with id ${selectedChoice.nextEntityId} not found`
+          `Prompt with id ${selectedChoice.nextEntityId} not found`,
         );
       }
       currentChoiceIndex = 0;

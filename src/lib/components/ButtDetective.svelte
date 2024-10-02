@@ -50,7 +50,7 @@
   }
 
   .speech-bubble {
-    @apply shadow-md fixed whitespace-nowrap overflow-hidden bg-zinc-50 text-zinc-900 rounded-md py-2 px-4;
+    @apply fixed overflow-hidden whitespace-nowrap rounded-md bg-zinc-50 px-4 py-2 text-zinc-900 shadow-md;
     bottom: 120px;
     right: 120px;
     transition: bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);

@@ -6,14 +6,14 @@
 </script>
 
 <div
-  class="bg-zinc-800 h-50 max-w-none md:h-[100svh] w-100 overflow-y-auto flex-1"
+  class="h-50 w-100 max-w-none flex-1 overflow-y-auto bg-zinc-800 md:h-[100svh]"
 >
-  <article class="p-4 prose prose-zinc dark:prose-invert">
+  <article class="prose prose-zinc p-4 dark:prose-invert">
     <h1>
       Hjelp! Jeg har blitt <img
         src="/images/butt-detective.png"
         alt="Butt detective"
-        class="inline-block w-10 h-10 align-middle m-0"
+        class="m-0 inline-block h-10 w-10 align-middle"
       />
     </h1>
     <OurTools />

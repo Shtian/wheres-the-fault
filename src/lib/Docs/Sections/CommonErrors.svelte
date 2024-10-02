@@ -9,7 +9,7 @@
 <h2 id="common-errors">Kjente feilmeldinger</h2>
 <h3 id="common-errors-orderform">Orderform</h3>
 <div class="overflow-x-auto">
-  <table class="table-fixed w-full">
+  <table class="w-full table-fixed">
     <thead>
       <tr>
         <th>Feilmelding</th>
@@ -79,7 +79,7 @@
 </div>
 <h3 id="common-errors-ice-no">Ice.no</h3>
 <div class="overflow-x-auto">
-  <table class="table-fixed w-full">
+  <table class="w-full table-fixed">
     <thead>
       <tr>
         <th>Feilmelding</th>

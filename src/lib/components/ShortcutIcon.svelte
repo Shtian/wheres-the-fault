@@ -3,10 +3,14 @@
 
   type ShortcutIconProps = {
     children: Snippet;
-  }
-  const { children } : ShortcutIconProps = $props();
+  };
+  const { children }: ShortcutIconProps = $props();
 </script>
-<span class="keyboard-shortcut bg-zinc-800 border border-zinc-700">{@render children()}</span>
+
+<span class="keyboard-shortcut border border-zinc-700 bg-zinc-800"
+  >{@render children()}</span
+>
+
 <style>
   .keyboard-shortcut {
     display: inline-block;

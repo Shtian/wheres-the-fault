@@ -4,8 +4,10 @@
   type LineQuestionHeaderProps = {
     children: Snippet;
     className?: string;
-  }
+  };
   const { children, className = "" }: LineQuestionHeaderProps = $props();
 </script>
 
-<span class={className}><LineSidebarCharacter>◇ </LineSidebarCharacter>{@render children()}</span>
+<span class={className}
+  ><LineSidebarCharacter>◇</LineSidebarCharacter>{@render children()}</span
+>
