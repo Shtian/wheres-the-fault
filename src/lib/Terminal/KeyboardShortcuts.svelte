@@ -13,7 +13,7 @@
 
 <svelte:window on:keydown={handleKeyDown} />
 <Button
-  class="fixed left-2 top-2"
+  class="fixed right-2 top-2"
   variant="outline"
   size="icon"
   on:click={() => (open = true)}><CircleHelp class="h-5 w-5" /></Button

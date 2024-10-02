@@ -45,7 +45,7 @@
 </script>
 
 <Button
-  class="fixed left-14 top-2"
+  class="fixed right-14 top-2"
   variant="outline"
   size="icon"
   on:click={handleToggleClick}><Keyboard class="h-5 w-5" /></Button
