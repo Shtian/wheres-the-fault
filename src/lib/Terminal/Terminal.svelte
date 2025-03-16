@@ -35,7 +35,7 @@
   function handleKeyDown(e: KeyboardEvent) {
     if (e.repeat) return;
 
-    if (e.ctrlKey && e.key === "l") {
+    if ((e.ctrlKey && e.key === "l") || (e.altKey && e.key === "l")) {
       prompts.clear();
     }
 
@@ -127,11 +127,13 @@
 
   .minimized {
     height: 38px;
+    min-height: auto;
     align-self: flex-end;
     margin-bottom: 8px;
   }
   .maximized {
     height: 100%;
+    max-height: none;
     align-self: stretch;
     width: 100%;
   }

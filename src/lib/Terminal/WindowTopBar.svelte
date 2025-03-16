@@ -30,5 +30,5 @@
     on:click={() => handleButtonClick("maximize")}
     ><span class="sr-only">maximize window</span></button
   >
-  <h1 class="ml-2 grow text-sm font-bold">Web Team Terminal</h1>
+  <h1 class="ml-2 grow text-sm font-bold">Dev Team Terminal</h1>
 </div>

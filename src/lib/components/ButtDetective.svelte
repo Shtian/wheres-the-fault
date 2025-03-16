@@ -22,14 +22,14 @@
 
 <svelte:window on:keydown={handleKeyDown} />
 <img
-  class="butt-detective"
+  class="butt-detective hidden md:block"
   class:visible
   src="/images/butt-detective.png"
   alt="Butt detective"
 />
 {#if visible}
   <span
-    class="speech-bubble"
+    class="speech-bubble hidden md:block"
     in:slide={{ duration: 250, delay: 500, axis: "x" }}
     out:fade={{ duration: 100 }}>Hmm... det lukter mistenkelig!</span
   >

@@ -50,6 +50,8 @@
             <td>Start på nytt</td>
             <td
               ><ShortcutIcon>CTRL</ShortcutIcon> + <ShortcutIcon>L</ShortcutIcon
+              > / <ShortcutIcon>ALT</ShortcutIcon> + <ShortcutIcon
+                >L</ShortcutIcon
               ></td
             >
           </tr>

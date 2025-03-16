@@ -13,7 +13,9 @@
   });
 </script>
 
-<div class="blob-wrapper relative h-full w-full overflow-hidden md:h-screen">
+<div
+  class="hidden md:grid blob-wrapper relative h-full w-full overflow-hidden md:h-screen"
+>
   <span
     class="blob blob-1 size-12 rounded-full bg-sky-400 opacity-30 blur-2xl transition-transform md:size-24 md:opacity-50"
     class:move-1={blobMovementToggle === 1}
@@ -43,9 +45,6 @@
 <style lang="postcss">
   .blob {
     transition-duration: 10000ms;
-  }
-  .blob-wrapper {
-    display: grid;
   }
   .blob-wrapper > * {
     grid-area: 1 / 1;

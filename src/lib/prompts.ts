@@ -16,10 +16,10 @@ const startPrompt: Prompt = {
   question: "Hvor kom feilmeldingen fra?",
   choices: [
     {
-      text: "#ice-team-web-notifications",
-      nextEntityId: "many-notifications-in-ice-operations",
+      text: "#some-slack-channel",
+      nextEntityId: "many-notifications-in-operations",
     },
-    { text: "#ice-operations", nextEntityId: "is-app-responding" },
+    { text: "#operation", nextEntityId: "is-app-responding" },
   ],
   id: PROMPT_IDS.start,
 };
@@ -43,7 +43,7 @@ const dynatraceErrorFlow: Prompt[] = [
   {
     type: "Information",
     message:
-      "Pust ut 😮‍💨 Se gjerne over ressursbruk og antall requests i Azure Portalen om det gjaldt ice.no",
+      "Pust ut 😮‍💨 Se gjerne over ressursbruk og antall requests i Azure Portalen om det gjaldt example.com",
     id: "application-responding-yes",
     docLinks: [
       SLACK_CANVAS_LINKS.PERFORMANCE,
@@ -52,17 +52,16 @@ const dynatraceErrorFlow: Prompt[] = [
   },
   {
     type: "Information",
-    message:
-      "Meld i fra på #ice-team-web. Aktiver incident workflow og be om bistand.",
+    message: "Meld i fra på #operations. Følg incident workflow.",
     id: "application-responding-no",
     docLinks: [SLACK_CANVAS_LINKS.INCIDENTS],
   },
 ];
 
-const iceWebTeamNotificationsErrorFlow: Prompt[] = [
+const teamNotificationsErrorFlow: Prompt[] = [
   {
     type: "Question",
-    question: "Er det mange feilmeldinger på #ice-operations?",
+    question: "Er det mange feilmeldinger på #operations?",
     choices: [
       {
         text: COMMON_PROMPT_TEXTS.YES,
@@ -73,12 +72,11 @@ const iceWebTeamNotificationsErrorFlow: Prompt[] = [
         nextEntityId: "is-it-a-known-issue",
       },
     ],
-    id: "many-notifications-in-ice-operations",
+    id: "many-notifications-in-operations",
   },
   {
     type: "Question",
-    question:
-      "Er feilene fra tjenester vi er avhengig av? Navi/PROFFS/CDS etc.",
+    question: "Er feilene fra tjenester vi er avhengig av?",
     choices: [
       { text: COMMON_PROMPT_TEXTS.YES, nextEntityId: "dependency-issues-info" },
       { text: COMMON_PROMPT_TEXTS.NO, nextEntityId: "is-it-a-known-issue" },
@@ -102,8 +100,8 @@ const iceWebTeamNotificationsErrorFlow: Prompt[] = [
       { text: COMMON_PROMPT_TEXTS.NO, nextEntityId: "is-error-in-code" },
     ],
     docLinks: [
-      SLACK_CANVAS_LINKS.KNOWN_ISSUES_ORDERFORM,
-      SLACK_CANVAS_LINKS.KNOWN_ISSUES_ICE_NO,
+      SLACK_CANVAS_LINKS.KNOWN_ISSUES_SERVICE_2,
+      SLACK_CANVAS_LINKS.KNOWN_ISSUES_EXAMPLE_COM,
     ],
     id: "is-it-a-known-issue",
   },
@@ -178,7 +176,8 @@ const iceWebTeamNotificationsErrorFlow: Prompt[] = [
   },
   {
     type: "Information",
-    message: "Fantastisk! Lag en bug i Jira med detaljer for å reprodusere ✨",
+    message:
+      "Fantastisk! Lag en bug i linear med detaljer for å reprodusere ✨",
     id: "success-create-issue",
   },
   {
@@ -213,7 +212,7 @@ const iceWebTeamNotificationsErrorFlow: Prompt[] = [
   },
   {
     type: "Information",
-    message: "Finn din nærmeste Web Team Rubber Duck! 🦆",
+    message: "Finn din nærmeste Rubber Duck! 🦆",
     id: "find-a-rubber-duck",
   },
   {
@@ -237,5 +236,5 @@ const iceWebTeamNotificationsErrorFlow: Prompt[] = [
 export const promptCollection: Prompt[] = [
   startPrompt,
   ...dynatraceErrorFlow,
-  ...iceWebTeamNotificationsErrorFlow,
+  ...teamNotificationsErrorFlow,
 ];
